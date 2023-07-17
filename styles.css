@@ -1,0 +1,36 @@
+.grid {
+    display: grid;
+    /* grid-template-columns: 100px 100px 100px 100px; */
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: auto;
+    gap: 24px; 
+}
+
+.grid > * {
+    margin:0;
+    padding;
+}
+
+p {
+    background: red;
+    border: 2px solid blue;
+    counter-increment: p;
+}
+
+p::before {
+    content: counter(p);
+    font-size: 2px
+}
+
+p:nth-last-of-type(6) {
+    grid-column: span 2;
+}
+
+p:nth-last-of-type(5) {
+    /* grid-column: span 3;
+    grid-row: span 3; */
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 5;
+}
